@@ -1,22 +1,66 @@
 .map{
     width: 100%;
+    position: relative;
+    padding-top: $space-default*4;
+    padding-bottom: $space-default*4;
 
-    circle[data-type='essence']{
-        fill: blue;
-    }  
-    circle[data-type='diesel']{
-        fill: red;
+    &__content{
+        @include grid();
+        grid-template-rows: repeat(6, 1fr);
     }
-    circle[data-type='electric']{
-        fill: green;
-    } 
-    circle[data-type='hybride']{
-        fill: orchid;
-    }   
-    circle[data-type='gaz']{
-        fill: aquamarine;
-    } 
-    circle[data-type='others']{
-        fill: darkorange;
-    } 
+
+    &__svg{
+        max-width: 90rem;
+        grid-column: 3 / -1;
+        grid-row: 1 / -1;
+
+        circle{
+            cursor: pointer;
+            transition: 200ms ease-in-out all;
+    
+            &[data-type='essence']{
+                fill: #FEEECE;
+            } 
+    
+            &[data-type='diesel']{
+                fill: #DEE6B3;
+            }
+    
+            &[data-type='electric']{
+                fill: #D9FCE5;
+            } 
+    
+            &[data-type='hybride']{
+                fill: #CEF0FE;
+            }  
+            
+            &[data-type='gaz']{
+                fill: #BAD6E6;
+            } 
+    
+            &[data-type='others']{
+                fill: #E6D3E9;
+            } 
+        }
+
+        .disable{
+            opacity: .2;
+        }
+    }
+
+    &__data{
+        grid-column: 3 / 7;
+        grid-row: 5 / 7;
+    }
+
+    &__number{
+        font-size: 6.1rem;
+        @include font-family($f-number);
+    }
+
+    &__type{
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+    }
 }

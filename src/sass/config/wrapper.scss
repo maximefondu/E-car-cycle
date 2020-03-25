@@ -5,6 +5,7 @@
    &--padding{
       @include responsive-max($width-container){
          padding: 0 $space-default;
+         box-sizing: border-box;
       }
    }
 }

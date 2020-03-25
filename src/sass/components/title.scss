@@ -2,4 +2,5 @@
     font-size: 6.1rem;
     font-weight: 700;
     @include font-family($f-secondary);
+    margin-bottom: $space-default;
 }

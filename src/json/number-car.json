@@ -1,44 +1,58 @@
 [
     {
-      "id": 1,
-      "name": "Électrique",
-      "slug": "electric",
-      "number": 15338,
-      "pourcent": 0.3
+        "id": 1,
+        "name": "électrique",
+        "plural": "électriques",
+        "slug": "electric",
+        "number": 15338,
+        "pourcent": 0.3
     },
     {
         "id": 2,
-        "name": "Hybride",
+        "name": "hybride",
+        "plural": "hybrides",
         "slug": "hybride",
         "number": 110984,
         "pourcent": 1.9
     },
     {
         "id": 3,
-        "name": "Essence",
+        "name": "essence",
+        "plural": "essence",
         "slug": "essence",
         "number": 2709604,
         "pourcent": 46
     },
     {
         "id": 4,
-        "name": "Diesel",
+        "name": "diesel",
+        "plural": "diesel",
         "slug": "diesel",
         "number": 3005928,
-        "pourcent": 51
+        "pourcent": 50.9
     },
     {
         "id": 5,
-        "name": "Gaz",
+        "name": "gaz",
+        "plural": "gaz",
         "slug": "gaz",
         "number": 14924,
         "pourcent": 0.3
     },
     {
         "id": 6,
-        "name": "Autres",
+        "name": "autres",
+        "plural": "autres",
         "slug": "others",
         "number": 32432,
-        "pourcent": 0.5    
+        "pourcent": 0.6    
+    },
+    {
+        "id": 7,
+        "name": "totale",
+        "plural": "totales",
+        "slug": "all",
+        "number": 5889210,
+        "pourcent": 100    
     }
 ]
