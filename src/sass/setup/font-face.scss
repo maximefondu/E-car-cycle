@@ -37,8 +37,8 @@
 ////Bold
 @font-face {
     font-family: "#{$f-number}";
-    //src: url("../../fonts/#{$f-number}-Bold.woff2") format("woff2"),
-    //     url("../../fonts/#{$f-number}-Bold.woff") format("woff");
+    src: url("./../fonts/#{$f-number}-Bold.woff2") format("woff2"),
+         url("./../fonts/#{$f-number}-Bold.woff") format("woff");
     font-weight: 700;
     font-style: normal;
 }

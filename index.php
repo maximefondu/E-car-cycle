@@ -5,7 +5,5 @@
         'folder' => 'sections'
     ]) ?>
 
-    <?= get_img('img.png') ?>
-
 <?php //</main> ?>
 <?php require('./templates/base/footer.php'); ?>
