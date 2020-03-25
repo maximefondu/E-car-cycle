@@ -19,7 +19,8 @@ require.context('./../videos')
 require("./../sass/main.scss")
 
 //Fonts
-require.context('./../fonts')
+require('../fonts/Rubik-Bold.woff2')
+require('../fonts/Rubik-Bold.woff')
 
 //Local
 function isLocal(){
