@@ -19,7 +19,7 @@ require.context('./../videos')
 require("./../sass/main.scss")
 
 //Fonts
-//require('./../fonts')
+require.context('./../fonts')
 
 //Local
 function isLocal(){
