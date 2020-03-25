@@ -1,0 +1,44 @@
+//Light
+@font-face {
+    font-family: "#{$f-main}";
+    src: url("/public/fonts/#{$f-main}-Light.woff2") format("woff2"),
+         url("/public/fonts/#{$f-main}-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+//Medium
+@font-face {
+    font-family: "#{$f-main}";
+    src: url("/public/fonts/#{$f-main}-Medium.woff2") format("woff2"),
+         url("/public/fonts/#{$f-main}-Medium.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+}
+
+//Light
+@font-face {
+    font-family: "#{$f-secondary}";
+    src: url("/public/fonts/#{$f-secondary}-Light.woff2") format("woff2"),
+         url("/public/fonts/#{$f-secondary}-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+//Bold
+@font-face {
+    font-family: "#{$f-secondary}";
+    src: url("/public/fonts/#{$f-secondary}-Bold.woff2") format("woff2"),
+         url("/public/fonts/#{$f-secondary}-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+//Bold
+@font-face {
+    font-family: "#{$f-number}";
+    src: url("/public/fonts/#{$f-number}-Bold.woff2") format("woff2"),
+         url("/public/fonts/#{$f-number}-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}

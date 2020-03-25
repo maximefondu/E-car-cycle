@@ -1,0 +1,22 @@
+.map{
+    width: 100%;
+
+    circle[data-type='essence']{
+        fill: blue;
+    }  
+    circle[data-type='diesel']{
+        fill: red;
+    }
+    circle[data-type='electric']{
+        fill: green;
+    } 
+    circle[data-type='hybride']{
+        fill: orchid;
+    }   
+    circle[data-type='gaz']{
+        fill: aquamarine;
+    } 
+    circle[data-type='others']{
+        fill: darkorange;
+    } 
+}

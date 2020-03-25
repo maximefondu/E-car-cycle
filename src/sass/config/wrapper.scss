@@ -1,0 +1,10 @@
+.wrapper{
+   max-width: $width-container;
+   margin: 0 auto;
+
+   &--padding{
+      @include responsive-max($width-container){
+         padding: 0 $space-default;
+      }
+   }
+}

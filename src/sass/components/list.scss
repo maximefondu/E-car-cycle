@@ -1,0 +1,11 @@
+.list{
+    margin-left: $space-default;
+
+    &__el{
+
+        &:before{
+            content: '-';
+            margin-right: $f-size-body / 2;
+        }
+    }
+}

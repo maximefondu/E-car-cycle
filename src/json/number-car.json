@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "name": "Électrique",
+      "slug": "electric",
+      "number": 15338,
+      "pourcent": 0.3
+    },
+    {
+        "id": 2,
+        "name": "Hybride",
+        "slug": "hybride",
+        "number": 110984,
+        "pourcent": 1.9
+    },
+    {
+        "id": 3,
+        "name": "Essence",
+        "slug": "essence",
+        "number": 2709604,
+        "pourcent": 46
+    },
+    {
+        "id": 4,
+        "name": "Diesel",
+        "slug": "diesel",
+        "number": 3005928,
+        "pourcent": 51
+    },
+    {
+        "id": 5,
+        "name": "Gaz",
+        "slug": "gaz",
+        "number": 14924,
+        "pourcent": 0.3
+    },
+    {
+        "id": 6,
+        "name": "Autres",
+        "slug": "others",
+        "number": 32432,
+        "pourcent": 0.5    
+    }
+]

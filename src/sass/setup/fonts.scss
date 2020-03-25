@@ -1,0 +1,7 @@
+$f-main: 'Montserrat';
+$f-secondary: 'Raleway';
+$f-number: 'Rubik';
+
+@mixin font-family($font){
+   font-family: $font, sans-serif;
+}

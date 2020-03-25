@@ -1,0 +1,19 @@
+$xs:    400px;
+$s:     500px;
+$m:     600px;
+$xm:    800px;
+$l:    1000px;
+$xl:   1100px;
+$xxl:  1300px;
+
+@mixin responsive-min($size){
+   @media (min-width: $size) {
+      @content;
+   }
+}
+
+@mixin responsive-max($size){
+   @media (max-width: $size) {
+      @content;
+   }
+}
