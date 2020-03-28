@@ -56,9 +56,6 @@ let config = {
                   }
                },
                {
-                  loader: 'sass-loader',
-               },
-               {
                   loader: 'postcss-loader',
                   options: {
                      sourceMap: true,
@@ -77,6 +74,9 @@ let config = {
                         //})
                      ]
                   }
+               },
+               {
+                  loader: 'sass-loader',
                }
             ]
          },
@@ -190,7 +190,6 @@ let config = {
                   options: {
                      name: "[name].[ext]",
                      outputPath: "fonts/",
-                     publicPath: "public/fonts",
                   }
                 }
             ],

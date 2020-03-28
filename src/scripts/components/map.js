@@ -1,109 +1,115 @@
-const mapSvg         = document.querySelector('.map__svg')
-const numberPosition = document.querySelector('.map__number')
-const typePosition   = document.querySelector('.map__type')
-const circles        = mapSvg.childNodes
-const numberUse      = []
+import { getLastNumber } from './getLastNumber'
+import { getLastTotal } from './getLastTotal'
+import { getRandomInt } from './../global/getRandomNumber'
+import { getPourcent } from './../global/getPourcent'
 
-//GetData
+const mapSvg      = document.querySelector('.map__svg')
+const contentData = document.querySelector('.map__content')
+const circles     = mapSvg.childNodes
+
 fetch(`./public/json/number-car.json`)
 .then(response => response.json())
 .then(data => {
 
-    data.forEach(element => {
-        const pourcent     = element['pourcent']
-        const slug         = element['slug']
-        const numberCircle = Math.round(pourcent / 100 * circles.length)
+    const totalLast  = getLastTotal(data)
 
-        if(slug !== 'all'){
-            for (let i = 0; i < numberCircle; i++) {
-                const circle = getRandomInt(circles.length)
-                circles[circle].setAttribute('data-type', slug)
-            }    
-        }else{
-            const number = getNumber(element['number'])
-            const plural = element['plural']
-            numberPosition.textContent=number
-            typePosition.textContent=`voitures aux ${plural}`
-        }
+    data.forEach(data => {
+        const view = data['view']
+        if(view){
+            const number   = getLastNumber(data)
+            const pourcent = getPourcent(number, totalLast)
 
+            colorCircle(pourcent, data)
+        }        
     })
 
-    circles.forEach(circle => { 
+    circles.forEach(circle =>{
         circle.addEventListener('mouseover', (e)=>{
-            displayData(data, e)
+            removeText()
+            disableCircle(e)
+            createPourcent(e, data, totalLast)
+            createName(e, data)
         })
-
-        circle.addEventListener('mouseout', (e)=>{
-            const defaultData = data.find(data => data.id == 7)
-            const number = getNumber(defaultData['number'])
-            const plural = defaultData['plural']
     
-            //TEXT
-            numberPosition.textContent = number
-            typePosition.textContent = `voitures ${plural}`
-
-            //COLORS
-            colorsRemove()
+        circle.addEventListener('mouseleave', (e)=>{
+            //REMOVE DISABLE
+            circles.forEach(circle => {
+                circle.classList.remove('disable')
+            })
         })
+        
     })
 
 })
 
 
 
-//RANDOM INT
-function getRandomInt(max){    
-    const number = Math.floor(Math.random() * Math.floor(max))
 
-    if(!numberUse.includes(number)){
-        numberUse.push(number)
-        return number
-    }else{
-        return getRandomInt(max)
-    }
-}
 
-//NUMBER 3 SPACES
-function getNumber(element){
-    const number = new Intl.NumberFormat().format(element)
-    return number
-}
+//–––––––––––––––––– FUNCTIONS ––––––––––––––––––
 
-//DISPLAY COLORS
-function colors(slug){
-    circles.forEach(circle => { 
-        circle.classList.add('disable')
 
-        const currentSlug = circle.getAttribute('data-type')
-        if(currentSlug === slug){
-            circle.classList.remove('disable')
-        }
-    })
-}
+//COLOR CIRLCE
+function colorCircle(pourcent, data){
+    const numberCirclesColor = Math.round(pourcent / 100 * circles.length)
+    const slug = data["slug"]
 
-//REMOVE COLORS
-function colorsRemove(){
-    circles.forEach(circle => {
-        circle.classList.remove('disable')
-    })
-}
-
-//DISPLAY
-function displayData(data, e){
-    const element        = e.currentTarget
-    const slug           = element.getAttribute('data-type')
-    const currentData    = data.find(data => data.slug == slug)
-    const plural         = currentData["plural"]
-    const number         = getNumber(currentData['number'])
-    const currentNumber  = numberPosition.textContent
-    
-    //SI SURVOLE UNE DATA DIFFERENTE
-    if(currentNumber !== number){
-        //TEXT
-        numberPosition.textContent = number
-        typePosition.textContent = `voitures ${plural}`
-
-        //COLORS
-        colors(slug)
+    for (let i = 0; i < numberCirclesColor; i++) {
+        const circle = getRandomInt(circles.length)
+        circles[circle].setAttribute('data-type', slug)
     } 
+}
+
+//REMOVE TEXT
+function removeText(){
+    const text = document.querySelector('.map__text')
+    text.classList.add('map__text--disable')
+}
+
+//HOVER ELEMENT SELECTED
+function disableCircle(e){
+    const slug = e.currentTarget.getAttribute('data-type')
+    circles.forEach(circle => {
+        const currentSlug = circle.getAttribute('data-type')
+
+        if(currentSlug !== slug){
+            circle.classList.add('disable')
+        }
+    });
+}
+
+//CREATE POURCENT
+function createPourcent(e, data, totalLast){
+    removeElement('map__pourcent')
+    const currentSlug = e.currentTarget.getAttribute('data-type')
+    const currentData = data.find(data => data.slug == currentSlug)
+    const number = getLastNumber(currentData)
+    const pourcent = getPourcent(number, totalLast)
+    const pourcentRound = Math.ceil(pourcent)
+
+    const span = document.createElement('span')
+    span.classList.add('map__pourcent')
+    span.textContent = `${pourcentRound}%`
+    contentData.append(span)
+}
+
+//CREATE NAME
+function createName(e, data){
+    removeElement('map__name')
+    const currentSlug = e.currentTarget.getAttribute('data-type')
+    const currentData = data.find(data => data.slug == currentSlug)
+    const name = currentData['plural']
+
+    const h2 = document.createElement('h2')
+    h2.classList.add('map__name')
+    h2.textContent = `de voiture ${name}`
+    contentData.append(h2)
+}
+
+//REMOVE ELEMENT
+function removeElement(classe){
+    const element = document.querySelector(`.${classe}`)
+    if(element){
+        element.remove()
+    }
 }

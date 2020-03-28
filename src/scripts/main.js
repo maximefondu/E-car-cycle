@@ -34,4 +34,5 @@ function isLocal(){
 }
 
 //IMPORTS
-import "./components/map.js";
+import "./components/map";
+import "./components/graph-car";

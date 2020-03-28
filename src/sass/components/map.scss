@@ -1,13 +1,7 @@
 .map{
-    width: 100%;
-    position: relative;
-    padding-top: $space-default*4;
-    padding-bottom: $space-default*4;
-
-    &__content{
-        @include grid();
-        grid-template-rows: repeat(6, 1fr);
-    }
+    @include grid;
+    grid-template-rows: repeat(6, 1fr);
+    margin-top: $space-default * 2;
 
     &__svg{
         max-width: 90rem;
@@ -48,19 +42,25 @@
         }
     }
 
-    &__data{
-        grid-column: 3 / 7;
+    &__content{
+        grid-column: 3 / 6;
         grid-row: 5 / 7;
     }
 
-    &__number{
-        font-size: 6.1rem;
+    &__pourcent{
         @include font-family($f-number);
+        font-weight: 700;
+        font-size: 6.1rem;
     }
 
-    &__type{
-        font-weight: 300;
-        text-transform: uppercase;
-        font-size: 1.6rem;
+    &__name{
+        font-size: 1.8rem;
+    }
+
+    &__text{
+        
+        &--disable{
+            display: none;
+        }
     }
 }

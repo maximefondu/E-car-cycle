@@ -4,55 +4,83 @@
         "name": "électrique",
         "plural": "électriques",
         "slug": "electric",
-        "number": 15338,
-        "pourcent": 0.3
+        "numbers": {
+            "2015": 2871,
+            "2016": 4368,
+            "2017": 6552,
+            "2018": 9244,
+            "2019": 15338
+        },
+        "view": true
     },
     {
         "id": 2,
         "name": "hybride",
         "plural": "hybrides",
         "slug": "hybride",
-        "number": 110984,
-        "pourcent": 1.9
+        "numbers": {
+            "2015": 32151,
+            "2016": 44364,
+            "2017": 63740,
+            "2018": 87012,
+            "2019": 110984
+        },
+        "view": true
     },
     {
         "id": 3,
         "name": "essence",
         "plural": "essence",
         "slug": "essence",
-        "number": 2709604,
-        "pourcent": 46
+        "numbers": {
+            "2015": 2091327,
+            "2016": 2199038,
+            "2017": 2335349,
+            "2018": 2518942,
+            "2019": 2709604
+        },
+        "view": true
     },
     {
         "id": 4,
         "name": "diesel",
         "plural": "diesel",
         "slug": "diesel",
-        "number": 3005928,
-        "pourcent": 50.9
+        "numbers": {
+            "2015": 3457526,
+            "2016": 3424592,
+            "2017": 3339034,
+            "2018": 3193658,
+            "2019": 3005928
+        },
+        "view": true
     },
     {
         "id": 5,
         "name": "gaz",
         "plural": "gaz",
         "slug": "gaz",
-        "number": 14924,
-        "pourcent": 0.3
+        "numbers": {
+            "2015": 18967,
+            "2016": 17238,
+            "2017": 15965,
+            "2018": 15500,
+            "2019": 14924
+        },
+        "view": true
     },
     {
         "id": 6,
-        "name": "autres",
-        "plural": "autres",
-        "slug": "others",
-        "number": 32432,
-        "pourcent": 0.6    
-    },
-    {
-        "id": 7,
         "name": "totale",
         "plural": "totales",
         "slug": "all",
-        "number": 5889210,
-        "pourcent": 100    
+        "numbers": {
+            "2015": 5602842,
+            "2016": 5689600,
+            "2017": 5760640,
+            "2018": 5824356,
+            "2019": 5856778
+        },
+        "view": false
     }
 ]

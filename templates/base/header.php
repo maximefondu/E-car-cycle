@@ -1,9 +1,8 @@
 <?php
 require('./templates/config/config.php');
 
-$title_website = 'Cyclee';
+$title_website = 'pollution cycle car';
 $description   = 'Description du site';
-
 $url_website   = 'url';
 $banner_url    = './public/images/banner.jpg';
 ?>
