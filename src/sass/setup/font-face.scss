@@ -7,36 +7,18 @@
     font-style: normal;
 }
 
-//Medium
+//Black
 @font-face {
     font-family: "#{$f-main}";
-    src: url("./../fonts/#{$f-main}-Medium.woff2") format("woff2"),
-         url("./../fonts/#{$f-main}-Medium.woff") format("woff");
-    font-weight: 600;
-    font-style: normal;
-}
-
-//Light
-@font-face {
-    font-family: "#{$f-secondary}";
-    src: url("./../fonts/#{$f-secondary}-Light.woff2") format("woff2"),
-         url("./../fonts/#{$f-secondary}-Light.woff") format("woff");
-    font-weight: 300;
-    font-style: normal;
-}
-
-//Bold
-@font-face {
-    font-family: "#{$f-secondary}";
-    src: url("./../fonts/#{$f-secondary}-Bold.woff2") format("woff2"),
-         url("./../fonts/#{$f-secondary}-Bold.woff") format("woff");
-    font-weight: 700;
+    src: url("./../fonts/#{$f-main}-Black.woff2") format("woff2"),
+         url("./../fonts/#{$f-main}-Black.woff") format("woff");
+    font-weight: 900;
     font-style: normal;
 }
 
 ////Bold
 @font-face {
-    font-family: "#{$f-number}";
+    font-family: "#{$f-secondary}";
     src: url("./../fonts/Rubik-Bold.woff2") format("woff2"),
          url("./../fonts/Rubik-Bold.woff") format("woff");
     font-weight: 700;

@@ -1,5 +1,5 @@
 .map{
-    @include grid;
+    @include grid();
     grid-template-rows: repeat(6, 1fr);
     margin-top: $space-default * 2;
 
@@ -13,27 +13,23 @@
             transition: 200ms ease-in-out all;
     
             &[data-type='essence']{
-                fill: #FEEECE;
+                fill: $c-essence;
             } 
     
             &[data-type='diesel']{
-                fill: #DEE6B3;
+                fill: $c-diesel;
             }
     
             &[data-type='electric']{
-                fill: #D9FCE5;
+                fill: $c-electric;
             } 
     
             &[data-type='hybride']{
-                fill: #CEF0FE;
+                fill: $c-hybride;
             }  
             
             &[data-type='gaz']{
-                fill: #BAD6E6;
-            } 
-    
-            &[data-type='others']{
-                fill: #E6D3E9;
+                fill: $c-gaz;
             } 
         }
 
@@ -48,13 +44,31 @@
     }
 
     &__pourcent{
-        @include font-family($f-number);
+        @include font-family($f-secondary);
         font-weight: 700;
+        line-height: 1;
         font-size: 6.1rem;
+
+        &--essence{
+            color: $c-essence;
+        }
+        &--diesel{
+            color: $c-diesel;
+        }
+        &--electric{
+            color: $c-electric;
+        }
+        &--hybride{
+            color: $c-hybride;
+        }
+        &--gaz{
+            color: $c-gaz;
+        }
     }
 
     &__name{
         font-size: 1.8rem;
+        font-weight: 300;
     }
 
     &__text{

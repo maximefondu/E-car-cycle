@@ -2,6 +2,7 @@ import { getLastNumber } from './getLastNumber'
 import { getLastTotal } from './getLastTotal'
 import { getRandomInt } from './../global/getRandomNumber'
 import { getPourcent } from './../global/getPourcent'
+import { spaceNumber } from './../global/spaceNumber'
 
 const mapSvg      = document.querySelector('.map__svg')
 const contentData = document.querySelector('.map__content')
@@ -27,7 +28,7 @@ fetch(`./public/json/number-car.json`)
         circle.addEventListener('mouseover', (e)=>{
             removeText()
             disableCircle(e)
-            createPourcent(e, data, totalLast)
+            createTotal(e, data)
             createName(e, data)
         })
     
@@ -79,17 +80,19 @@ function disableCircle(e){
 }
 
 //CREATE POURCENT
-function createPourcent(e, data, totalLast){
+function createTotal(e, data){
     removeElement('map__pourcent')
     const currentSlug = e.currentTarget.getAttribute('data-type')
     const currentData = data.find(data => data.slug == currentSlug)
-    const number = getLastNumber(currentData)
-    const pourcent = getPourcent(number, totalLast)
-    const pourcentRound = Math.ceil(pourcent)
+    
+    let number = getLastNumber(currentData)
+    number = spaceNumber(number)
+    //const pourcent = getPourcent(number, totalLast)
+    //const pourcentRound = Math.ceil(pourcent)
 
     const span = document.createElement('span')
-    span.classList.add('map__pourcent')
-    span.textContent = `${pourcentRound}%`
+    span.classList.add('map__pourcent', 'map__pourcent--' + currentSlug)
+    span.textContent = number
     contentData.append(span)
 }
 

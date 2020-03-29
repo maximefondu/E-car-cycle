@@ -1,0 +1,4 @@
+.section{
+    @include grid();
+    margin: $space-default * 4 0;
+}

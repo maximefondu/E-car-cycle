@@ -1,7 +1,11 @@
 <?php require('./templates/base/header.php'); ?>
 <?php //<main> ?>
 
-    <?php import('number-car', '', [
+    <?php import('head', '', [
+        'folder' => 'sections'
+    ]) ?>
+
+    <?php import('car-total', '', [
         'folder' => 'sections'
     ]) ?>
 

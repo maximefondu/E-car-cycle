@@ -1,7 +1,7 @@
 <?php
 require('./templates/config/config.php');
 
-$title_website = 'pollution cycle car';
+$title_website = 'Cycle e-car';
 $description   = 'Description du site';
 $url_website   = 'url';
 $banner_url    = './public/images/banner.jpg';
@@ -29,5 +29,10 @@ $banner_url    = './public/images/banner.jpg';
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-   <header></header>
+   <header class='header wrapper wrapper--padding'>
+      <ul class='header__content'>
+         <li class='header__el'>Cycle e-car</li>
+         <li class='header__el'>Datavisualisation</li>
+      </ul>
+   </header>
    <main>

@@ -35,4 +35,4 @@ function isLocal(){
 
 //IMPORTS
 import "./components/map";
-import "./components/graph-car";
+import "./components/head-pourcent";

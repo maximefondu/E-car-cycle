@@ -1,6 +1,6 @@
 import Chart from 'chart.js';
 
-const graph = document.querySelector('.evolution').getContext('2d')
+const graph = document.querySelector('.head-pourcent__canvas').getContext('2d')
 const types = {}
 
 fetch(`./public/json/number-car.json`)
@@ -19,18 +19,32 @@ fetch(`./public/json/number-car.json`)
     const char = new Chart(graph, {
         type: 'line',
         data: {
-            labels: ['2015', '2016', '2017', '2018', '2019'],
             datasets: [
                 {
                     data: types.electric,
                     backgroundColor: 'transparent',
-                    borderColor:'rgba(169,255,203,1)',
+                    borderColor:'rgba(187, 255, 202, 1)',
                 },
                 {
                     data: types.hybride,
                     backgroundColor: 'transparent',
-                    borderColor:'rgba(9,255,203,1)',
+                    borderColor:'rgba(184, 255, 251, 1)',
                 },
+                //{
+                //    data: types.essence,
+                //    backgroundColor: 'transparent',
+                //    borderColor:'rgba(255, 214, 108, 1)',
+                //},
+                //{
+                //    data: types.diesel,
+                //    backgroundColor: 'transparent',
+                //    borderColor:'rgba(237, 228, 194, 1)',
+                //},
+                {
+                    data: types.gaz,
+                    backgroundColor: 'transparent',
+                    borderColor:'rgba(253, 207, 207, 1)',
+                }
             ]
         },
         options: {
@@ -51,9 +65,8 @@ fetch(`./public/json/number-car.json`)
                     },
     
                     ticks: {
-                        max: 150000,
-                        min: 1000,
-                        stepSize: 1000
+                        max: 60000,
+                        min: 1000
                     }
                 }],
             }

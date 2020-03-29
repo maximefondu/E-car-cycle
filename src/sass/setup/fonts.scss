@@ -1,6 +1,5 @@
-$f-main: 'Montserrat';
-$f-secondary: 'Raleway';
-$f-number: 'Rubik';
+$f-main: 'Raleway';
+$f-secondary: 'Rubik';
 
 @mixin font-family($font){
    font-family: $font, sans-serif;

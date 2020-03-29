@@ -1,0 +1,9 @@
+.header{
+
+    &__content{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: $space-default 0;
+    }
+}
